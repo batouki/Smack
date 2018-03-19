@@ -1,5 +1,6 @@
 package com.example.baptiste.smack
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+
+
+
     }
 
     override fun onBackPressed() {
@@ -36,7 +40,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginBtnNavClicked(view:View){
-
+        val loginIntent = Intent(this, LoginActivity::class.java)
+        startActivity(loginIntent)
     }
 
     fun addChannelClicked(view: View){
