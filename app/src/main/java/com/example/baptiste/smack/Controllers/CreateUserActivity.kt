@@ -1,9 +1,10 @@
-package com.example.baptiste.smack
+package com.example.baptiste.smack.Controllers
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.baptiste.smack.R
 import kotlinx.android.synthetic.main.activity_create_user.*
 import java.util.*
 
