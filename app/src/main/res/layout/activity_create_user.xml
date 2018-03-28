@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="84dp" />
 
     <EditText
         android:id="@+id/createEmailText"
@@ -34,9 +35,10 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createUserNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/createUserNameText"
+        tools:layout_editor_absoluteX="84dp" />
 
     <EditText
         android:id="@+id/createPasswordText"
@@ -52,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/createEmailText"
+        tools:layout_editor_absoluteX="84dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -86,7 +89,7 @@
         android:layout_marginTop="24dp"
         android:background="@color/colorPrimary"
         android:onClick="generateColorClicked"
-        android:text="Generate background color"
+        android:text="generate background color"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -102,7 +105,7 @@
         android:layout_marginStart="32dp"
         android:background="@color/colorPrimary"
         android:onClick="createUserClicked"
-        android:text="Create user"
+        android:text="create user"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,9 +117,10 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

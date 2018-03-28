@@ -32,17 +32,19 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(userDataChangeReceiver, IntentFilter(BROADCAST_USER_DATA_CHANGE))
+        LocalBroadcastManager.getInstance(this).registerReceiver(userDataChangeReceiver,
+                IntentFilter(BROADCAST_USER_DATA_CHANGE))
     }
 
-    private  val userDataChangeReceiver = object: BroadcastReceiver(){
-        override fun onReceive(context: Context, intent: Intent?) {
-            if (AuthService.isLoggedIn){
+    private val userDataChangeReceiver = object: BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (AuthService.isLoggedIn) {
                 userNameNavHeader.text = UserDataService.name
                 userEmailNavHeader.text = UserDataService.email
-                val resourceId = resources.getIdentifier(UserDataService.avatarName, "drawable", packageName)
-                userImageNavHeader.setBackgroundColor(UserDataService.returnAvatarColor(UserDataService.avatarColor))
+                val resourceId = resources.getIdentifier(UserDataService.avatarName, "drawable",
+                        packageName)
                 userImageNavHeader.setImageResource(resourceId)
+                userImageNavHeader.setBackgroundColor(UserDataService.returnAvatarColor(UserDataService.avatarColor))
                 loginBtnNavHeader.text = "Logout"
             }
         }
@@ -56,9 +58,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun loginBtnNavClicked(view:View){
-        if(AuthService.isLoggedIn){
+    fun loginBtnNavClicked(view: View) {
 
+        if (AuthService.isLoggedIn) {
+            // log out
             UserDataService.logout()
             userNameNavHeader.text = "Login"
             userEmailNavHeader.text = ""
@@ -66,19 +69,17 @@ class MainActivity : AppCompatActivity() {
             userImageNavHeader.setBackgroundColor(Color.TRANSPARENT)
             loginBtnNavHeader.text = "Login"
 
-        }else{
+        } else {
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
         }
     }
 
-    fun addChannelClicked(view: View){
+    fun addChannelClicked(view: View) {
 
     }
 
-    fun sendMsgBtnClicked(view: View){
+    fun sendMsgBtnClicked(view: View) {
 
     }
-
-
 }
